@@ -1,0 +1,7 @@
+streamlit
+numpy
+pandas
+malariagen_data
+typing
+numpy
+xarray
