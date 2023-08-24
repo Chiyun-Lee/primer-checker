@@ -33,7 +33,6 @@ def get_sequence_reverse_complement(
         return "".join(rcs)
     return rcs
 
-@st.cache_data
 def streamlit_find_sequence_in_reference_region(
         sequence,
         chromosome: str,
@@ -101,7 +100,6 @@ def streamlit_find_sequence_in_reference_region(
         return hits_df.head(top_k)
     return hits_df
 
-@st.cache_data
 def streamlit_find_primer_coordinates(
         primer_data: pd.DataFrame,
         search_margin_bp: int=150,
@@ -152,7 +150,6 @@ def streamlit_find_primer_coordinates(
     
     return pd.concat(amplicon_primer_coords).reset_index()
 
-@st.cache_data
 def streamlit_parse_sequence_info(sequence_info) -> Dict[str, Dict[str, Any]]:
     if isinstance(sequence_info, str):
         sequence_info = pd.read_csv(sequence_info)
